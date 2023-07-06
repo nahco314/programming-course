@@ -30,7 +30,7 @@
 - 言語: `C++ (GCC 9.2.1)`
 - ソースコード:
   ```cpp
-  # include <bits/stdc++.h>
+  #include <bits/stdc++.h>
   using namespace std;
   
   int main() {

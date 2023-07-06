@@ -1,6 +1,6 @@
 :root {
-  --around-padding: 3.5rem;
-  --base-font-size: 1.8rem;
+  --around-padding: 56px;
+  --base-font-size: 28.8px;
 }
 
 .slidev-layout {
@@ -10,12 +10,12 @@
 }
 
 .slidev-layout h1 {
-  font-size: 3.25rem;
+  font-size: 52px;
   margin-bottom: calc(var(--around-padding) * 0.8);
 }
 
 .slidev-layout img {
-  padding: 1rem;
+  padding: 16px;
 }
 
 .slidev-layout.cover.slidev-page {
@@ -26,5 +26,12 @@
 }
 
 .slidev-layout.cover h1 {
-  font-size: 4.5rem;
+  font-size: 72px;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
