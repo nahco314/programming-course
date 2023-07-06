@@ -12,7 +12,7 @@ jobs:
         run: npm install
       - name: Build
         run: |
-          npm run build --base /programming-course/
+          yarn build --base /my-repo-name/
           cp dist/index.html dist/404.html
       - name: Deploy pages
         uses: crazy-max/ghaction-github-pages@v2
