@@ -1,0 +1,7 @@
+.slidev-layout li {
+  line-height: calc(var(--base-font-size) * 1.5);
+}
+
+.slidev-layout ul + ul {
+  margin-top: calc(var(--base-font-size) * 1.5);
+}
