@@ -6,6 +6,6 @@
   margin-top: 1.5em;
 }
 
-.slidev-layout ul ul {
+.slidev-layout ul ul, ol ul, ul ol, ol ol {
   font-size: 0.9em;
 }
