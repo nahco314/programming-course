@@ -24,13 +24,6 @@ src: ./pages/basic.md
 src: ./pages/basic-coding.md
 ---
 
-# テスト！
-
-- あいう
-- あいう
-- あいう
-- あいう
-- あいう
-- あいう
-- あいう
-- あいう
+---
+src: ./pages/basic-debug.md
+---
