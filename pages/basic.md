@@ -128,7 +128,7 @@ pre[class*='language-'] {
 
 # コメント
 
-<div class="box">
+<div class="flex-box">
 
 <div class="code-sec">
 
@@ -173,7 +173,7 @@ pre[class*='language-'] {
   margin-right: 40px;
 }
 
-.box {
+.flex-box {
   display: flex;
 }
 

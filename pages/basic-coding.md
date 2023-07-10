@@ -198,6 +198,9 @@ pre[class*='language-'] {
 </style>
 
 ---
+# これ消すとなんかクリック回数多くなっちゃう slidevのバグ？
+clicks: 3
+---
 
 # 出力
 
@@ -212,7 +215,7 @@ int main() {
 </center>
 
 <div id="cout-box">
-<h3><span>cout</span></h3>
+<h3><span class="title">cout</span></h3>
 <div class="inner">
 
 <div v-click="1">
@@ -225,6 +228,9 @@ Hello,World!
 
 </div>
 </div>
+
+<div v-click-hide="2"><div class="box" id="box-0" v-click="1"></div></div>
+<div v-click-hide="3"><div class="box" id="box-1" v-click="2"></div></div>
 
 <style>
 
@@ -250,7 +256,7 @@ pre[class*='language-'] {
   left: 20px;
   top: -0.8em;
 }
-#cout-box span{
+#cout-box .title{
   padding: 0.5em;
   background: #FFF;
   color: #0094D6;
@@ -263,8 +269,34 @@ pre[class*='language-'] {
     block-size: 0;
 }
 
+.box {
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+
+  height: 30px;
+  border: 2px solid red;
+}
+
+#box-0 {
+  top: 200px;
+  left: 202px;
+
+  width: 250px;
+}
+
+#box-1 {
+  top: 200px;
+  left: 460px;
+
+  width: 108px;
+}
+
 </style>
 
+---
+clicks: 7
 ---
 
 # 出力
@@ -272,9 +304,6 @@ pre[class*='language-'] {
 <center>
 
 ```cpp
-#include <bits/stdc++.h>
-using namespace std;
- 
 int main() {
   cout << "こんにちは。";
   cout << "Hello," << "World!" << endl;
@@ -303,8 +332,10 @@ World!
 
 </div>
 
-<div v-click="4" v-click-hide="5" class="br-div">
+<div v-click-hide="5">
+<div v-click="4" class="br-div">
 &nbsp;
+</div>
 </div>
 
 <div v-click="5">
@@ -318,10 +349,17 @@ World!
 </div>
 </div>
 
+<div v-click-hide="2"><div class="box" id="box-0" v-click="1"></div></div>
+<div v-click-hide="3"><div class="box" id="box-1" v-click="2"></div></div>
+<div v-click-hide="4"><div class="box" id="box-2" v-click="3"></div></div>
+<div v-click-hide="5"><div class="box" id="box-3" v-click="4"></div></div>
+<div v-click-hide="6"><div class="box" id="box-4" v-click="5"></div></div>
+<div v-click-hide="7"><div class="box" id="box-5" v-click="6"></div></div>
+
 <style>
 
 .slidev-code code {
-  font-size: 16px  !important;
+  font-size: 20px  !important;
 }
 
 pre[class*='language-'] {
@@ -330,6 +368,8 @@ pre[class*='language-'] {
 }
 
 #cout-box {
+  min-height: calc(2em + 4px);
+
   border: 2px solid #0094D6;
   position: relative;
   z-index: 10;
@@ -358,8 +398,51 @@ pre[class*='language-'] {
   block-size: 0;
 }
 
-:not(.slidev-vclick-prior, .slidev-vclick-current).br-div {
-  block-size: 0;
+.box {
+  height: 30px;
+  border-color: red;
+}
+
+#box-0 {
+  top: 192px;
+  left: 158px;
+
+  width: 185px;
+}
+
+#box-1 {
+  top: 222px;
+  left: 158px;
+
+  width: 140px;
+}
+
+#box-2 {
+  top: 222px;
+  left: 300px;
+
+  width: 140px;
+}
+
+#box-3 {
+  top: 222px;
+  left: 445px;
+
+  width: 90px;
+}
+
+#box-4 {
+  top: 250px;
+  left: 158px;
+
+  width: 90px;
+}
+
+#box-5 {
+  top: 250px;
+  left: 252px;
+
+  width: 90px;
 }
 
 </style>
@@ -370,3 +453,320 @@ pre[class*='language-'] {
 
 - 演習問題
   - https://atcoder.jp/contests/apg4b/tasks/APG4b_cv
+
+---
+
+# セミコロン
+
+- 前述したが、C++ では文の区切りとして、全ての文の末尾に `;` をつける
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+  cout << "こんにちは。";
+  cout << "Hello," << "World!" << endl;
+  cout << 1234 << endl;
+}
+```
+
+<style>
+
+pre[class*='language-'] {
+  margin-top: 40px;
+}
+
+</style>
+
+---
+
+# 四則演算
+
+- C++では整数を扱うことができる
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+ 
+int main() {
+  cout << "こんにちは。";
+  cout << "Hello," << "World!" << endl;
+  cout << 1234 << endl;
+}
+```
+
+<div id="int-emp-sec">
+<div id="int-emp-box"></div>
+↑これ
+</div>
+
+<style>
+
+pre[class*='language-'] {
+  margin-top: 20px;
+}
+
+#int-emp-sec {
+  position: absolute;
+
+  text-align: center;
+  font-size: 16px;
+
+  top: 367px;
+  left: 169px;
+}
+
+#int-emp-box {
+  height: 25px;
+  width: 45px;
+
+  border: 2px solid red;
+}
+
+</style>
+
+---
+
+# 四則演算
+
+- 整数を扱う簡単な計算もできる
+
+<center>
+
+```cpp
+int main() {
+  cout << 1 + 1 << endl;  // 2  足し算
+  cout << 3 - 4 << endl;  // -1 引き算
+  cout << 2 * 3 << endl;  // 6  掛け算
+  cout << 7 / 3 << endl;  // 2  割り算
+  cout << 7 % 3 << endl;  // 1  割り算の"あまり"
+
+  cout << +4 << endl;  // 4  プラス記号
+  cout << -3 << endl;  // -3 マイナス記号
+
+  cout << 2 + 3 * 4 << endl;    // 14
+  cout << (2 + 3) * 4 << endl;  // 30
+}
+```
+
+</center>
+
+<style>
+
+pre[class*='language-'] {
+  width: 650px;
+  margin-top: 20px;
+}
+
+</style>
+
+---
+
+# 四則演算
+
+<center>
+
+```cpp
+cout << 1 + 1 << endl;  // 2  足し算
+```
+
+</center>
+
+- 普通に足し算
+
+<style>
+
+.slidev-code code {
+  font-size: 30px  !important;
+}
+
+pre[class*='language-'] {
+  width: 840px;
+  margin-bottom: 40px;
+}
+
+</style>
+
+---
+
+# 四則演算
+
+<center>
+
+```cpp
+cout << 3 - 4 << endl;  // -1 引き算
+```
+
+</center>
+
+- 普通に引き算
+- 負の整数も扱えるよ
+
+<style>
+
+.slidev-code code {
+  font-size: 30px  !important;
+}
+
+pre[class*='language-'] {
+  width: 840px;
+  margin-bottom: 40px;
+}
+
+</style>
+
+---
+
+# 四則演算
+
+<center>
+
+```cpp
+cout << 2 * 3 << endl;  // 6  掛け算
+```
+
+</center>
+
+- 掛け算　記号は「×」とかじゃなくて `*` なので注意しよう
+  - `*`: アスタリスク
+
+<style>
+
+.slidev-code code {
+  font-size: 30px  !important;
+}
+
+pre[class*='language-'] {
+  width: 840px;
+  margin-bottom: 40px;
+}
+
+</style>
+
+---
+
+# 四則演算
+
+<center>
+
+```cpp
+cout << 7 / 3 << endl;  // 2  割り算
+```
+
+</center>
+
+- 割り算　記号は `/`
+  - `/`: スラッシュ
+  - / の左が分子、右が分母だと考えると、分数の表示を平たくしたみたいに見える
+
++ 整数同士の割り算は、答えが切り捨てで整数になる
+
+<style>
+
+.slidev-code code {
+  font-size: 30px  !important;
+}
+
+pre[class*='language-'] {
+  width: 840px;
+  margin-bottom: 40px;
+}
+
+</style>
+
+---
+
+# 四則演算
+
+<center>
+
+```cpp
+cout << 7 % 3 << endl;  // 1  割り算の"あまり"
+```
+
+</center>
+
+- 割り算のあまり
+
++ 7÷3は2あまり1なので、`7 % 3` は `1` となる
+
+<style>
+
+.slidev-code code {
+  font-size: 30px  !important;
+}
+
+pre[class*='language-'] {
+  width: 840px;
+  margin-bottom: 40px;
+}
+
+</style>
+
+---
+
+# 四則演算
+
+<center>
+
+```cpp
+cout << +4 << endl;  // 4  プラス記号
+cout << -3 << endl;  // -3 マイナス記号
+```
+
+</center>
+
+- 普通にプラスとマイナス
+
+<style>
+
+.slidev-code code {
+  font-size: 30px  !important;
+}
+
+pre[class*='language-'] {
+  width: 840px;
+  margin-bottom: 40px;
+}
+
+</style>
+
+---
+
+# 四則演算 - 優先順位
+
+- これらの演算には優先順位がある
+- 優先順位は我々が普段使っているものと同じ
+  - `*/%` → `+-` の順で計算される
+  
++ `()` で括ることで先に計算させることもできる
+
+---
+
+# 四則演算 - 優先順位
+
+<center>
+
+```cpp
+cout << 2 + 3 * 4 << endl;    // 14
+cout << (2 + 3) * 4 << endl;  // 30
+```
+
+</center>
+
+- 掛け算が先に計算されるので、上の式は `14` になる
+- `()` でくくったとこは先に計算されるので、下の式は `30` になる
+
+<style>
+
+.slidev-code code {
+  font-size: 30px  !important;
+}
+
+pre[class*='language-'] {
+  width: 840px;
+  margin-bottom: 40px;
+}
+
+</style>
