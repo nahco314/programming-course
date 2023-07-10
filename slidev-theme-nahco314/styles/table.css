@@ -1,0 +1,18 @@
+.slidev-layout table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.slidev-layout table th {
+  padding: 4px;
+  background: lightgray;
+  border: solid 1px darkgray;
+  text-align: center;
+}
+
+.slidev-layout table td {
+  padding: 4px;
+  border: solid 1px darkgray;
+}

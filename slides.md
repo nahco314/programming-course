@@ -27,3 +27,7 @@ src: ./pages/basic-coding.md
 ---
 src: ./pages/basic-debug.md
 ---
+
+---
+src: ./pages/variable.md
+---

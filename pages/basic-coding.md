@@ -773,6 +773,69 @@ pre[class*='language-'] {
 
 ---
 
+# 四則演算 - 小数
+
+- 小数を扱うこともできる
+
+<center>
+
+```cpp
+int main() {
+  cout << 1.0 + 2.5 << endl;  //  3.5
+  cout << 5 * 0.25 << endl;   //  1.25
+  cout << -2.0 - 0.4 << endl; // -2.4
+}
+```
+
+</center>
+
+<style>
+
+.slidev-code code {
+  font-size: 24px  !important;
+}
+
+pre[class*='language-'] {
+  width: 650px;
+  margin-top: calc(30px + 43.2px);
+}
+
+</style>
+
+---
+
+# 四則演算 - 小数
+
+- 整数同士の割り算は切り捨てだが、割る数か割られる数のどちらかが小数なら結果は小数になる
+
+<center>
+
+```cpp
+int main() {
+  cout << 7 / 3 << endl;      // 2
+  cout << 7.0 / 3 << endl;    // 2.33333
+  cout << 7 / 3.0 << endl;    // 2.33333
+  cout << 7.0 / 3.0 << endl;  // 2.33333
+}
+```
+
+</center>
+
+<style>
+
+.slidev-code code {
+  font-size: 24px  !important;
+}
+
+pre[class*='language-'] {
+  width: 650px;
+  margin-top: 30px;
+}
+
+</style>
+
+---
+
 # 四則演算
 
 - 演習問題
