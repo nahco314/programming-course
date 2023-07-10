@@ -9,11 +9,19 @@ highlighter: prism
 
 ---
 layout: default
+src: ./pages/intro.md
+---
+
+---
 src: ./pages/atcoder-tutorial.md
 ---
 
 ---
 src: ./pages/basic.md
+---
+
+---
+src: ./pages/basic-coding.md
 ---
 
 # テスト！

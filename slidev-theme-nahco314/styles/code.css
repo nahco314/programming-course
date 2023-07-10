@@ -4,12 +4,12 @@
 
 :root {
   --prism-font-family: var(--slidev-code-font-family);
-  --code-padding: 20px;
-  --code-font-size: 16px;
   --slidev-code-padding: var(--code-padding);
   --slidev-code-font-size: var(--code-font-size);
-  --slidev-code-line-height: calc(var(--code-font-size) * 1.5);
+  --slidev-code-line-height: 1.5em;
   --slidev-code-radius: 0;
+
+  --inline-code-font-size: 20px;
 }
 
 html:not(.dark) {
@@ -66,7 +66,7 @@ pre[class*='language-'] {
 }
 
 :not(pre) > code {
-  font-size: 16px;
+  font-size: var(--inline-code-font-size);
   background: var(--prism-background);
   @apply font-light py-0.5 rounded;
 }
@@ -81,6 +81,13 @@ pre[class*='language-'] {
   margin-right: -0.08em;
 }
 
+.slidev-code {
+  font-size: 16px  !important;
+  padding: 20px  !important;
+  border-radius: 0  !important;
+}
+
+
 code {
-  font-size: var(--code-font-size);
+  line-height: 1.5em;
 }
