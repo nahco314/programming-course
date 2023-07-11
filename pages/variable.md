@@ -1,0 +1,318 @@
+# 型
+
+- C++ において、全ての値には**型**がある
+- 型: 「値の種類」
+
++ 今までに扱ったことのある型
+
+<center>
+
+| 型名       | 内容  | 例                |
+|----------|-----|------------------|
+| `int`    | 整数  | `42`             |
+| `float`  | 小数  | `0.25`           |
+| `string` | 文字列 | `"Hello,World!"` |
+
+</center>
+
+<style>
+
+.slidev-layout table {
+  width: 700px;
+  margin-top: 12px;
+}
+
+</style>
+
+---
+
+# 型
+
+- 全ての値には型があるので、当然全ての式に型がある
+
+<center>
+
+| 式             | 型       |
+|---------------|---------|
+| `1 + 2`       | `int`   |
+| `7 / 3`       | `int`   |
+| `7.0 / 3`     | `float` |
+| `(2 + 3) * 4` | `int`   |
+
+</center>
+
+<style>
+
+.slidev-layout table {
+  width: 700px;
+  margin-top: 30px;
+}
+
+</style>
+
+---
+
+# 型
+
+- 型は、その値がどのように振る舞うか(扱われるか)を定義する
+  - というと難しそうだが、要するに「型によって扱いが変わる」
+
++ 例えば、型は割り算の挙動を定義する
+  - `int / int` → `int`
+  - `int / float` → `float`
+  - `float / int` → `float`
+  - `float / float` → `float`
+
+---
+
+# 変数
+
+- 値を読み書きする*記憶域*
+  - 「値を格納できる箱」というイメージ
+
+<v-click>
+
++ 例を見てみよう
+
+</v-click>
+
+---
+clicks: 6
+---
+
+# 変数
+
+<div id="main">
+
+```cpp
+int main() {
+  int num;
+
+  num = 10;
+
+  cout << num << endl;  // 10
+  
+  num = 4;
+  
+  cout << num * 2 << endl;  // 8
+}
+```
+
+<div v-click="1">
+
+<div id="num-box">
+<h3><span class="title">num</span></h3>
+<div class="inner">
+
+<div v-click-hide="4">
+<div v-click="2">
+10
+</div>
+</div>
+
+<div v-click="4">
+4
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div v-click-hide="2">
+<div v-click="1">
+
+<div class="box" id="box-0"></div>
+
+- `int num;`
+  - 変数の**宣言**
+  - `int` 型の値を扱う、`num` という名前の変数
+
+</div>
+</div>
+
+<div v-click-hide="3">
+<div v-click="2">
+
+<div class="box" id="box-1"></div>
+
+- `num = 10;`
+  - `num` に `10` を**代入**する
+  - 代入: 変数に値を入れる
+
+</div>
+</div>
+
+<div v-click-hide="4">
+<div v-click="3">
+
+<div class="box" id="box-2"></div>
+
+- `cout << num << endl;`
+  - `num` の中身を出力
+  - 変数の中身を取り出すことを、**参照**するという
+
+</div>
+</div>
+
+<div v-click-hide="5">
+<div v-click="4">
+
+<div class="box" id="box-3"></div>
+
+- `num = 4;`
+  - `num` に `4` を代入する
+
+</div>
+</div>
+
+<div v-click-hide="6">
+<div v-click="5">
+
+<div class="box" id="box-4"></div>
+
+- `cout << num * 2 << endl;`
+  - `num` の中身を2倍して出力する
+
+</div>
+</div>
+
+<style>
+
+pre[class*='language-'] {
+  width: 550px;
+}
+
+.slidev-code code {
+  font-size: 12px;
+  height: 600px  !important;
+}
+
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#num-box {
+  height: 150px;
+  width: 150px;
+
+  border: 2px solid #0094D6;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  margin-left: 120px;
+}
+#num-box h3{
+  text-align: center;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: -1em;
+}
+#num-box .title{
+  font-size: 30px;
+
+  padding: 0.5em;
+  background: #FFF;
+  color: #0094D6;
+}
+#num-box .inner{
+  font-size: 64px;
+
+  margin-top: -16px;
+}
+
+.box {
+  height: 24px;
+  border-color: orange;
+}
+
+#box-0 {
+  top: 188px;
+  left: 108px;
+
+  width: 70px;
+}
+
+#box-1 {
+  top: 224px;
+  left: 108px;
+
+  width: 74px;
+}
+
+#box-2 {
+  top: 260px;
+  left: 108px;
+
+  width: 155px;
+}
+
+#box-3 {
+  top: 296px;
+  left: 108px;
+
+  width: 70px;
+}
+
+#box-4 {
+  top: 332px;
+  left: 108px;
+
+  width: 184px;
+}
+
+.slidev-vclick-hidden {
+    block-size: 0;
+}
+
+</style>
+
+---
+
+# 変数 - 余談
+
+- 変数の宣言と最初の代入(初期化とも呼ぶ)は同時にできる
+- int 型に限らず、様々な型の変数を使うことができる
+
+<center>
+
+```cpp
+int main() {
+  int num = 10;
+  float per = 0.25;
+
+  cout << num * per << endl;  // 2.5
+  
+  string greeting = "Hello!";
+  
+  cout << greeting << endl;  // Hello!
+}
+```
+
+</center>
+
+<style>
+
+pre[class*='language-'] {
+  margin-top: 20px;
+  width: 760px;
+}
+
+</style>
+
+---
+
+# 変数
+
+- 演習問題
+  - https://atcoder.jp/contests/apg4b/tasks/APG4b_cs

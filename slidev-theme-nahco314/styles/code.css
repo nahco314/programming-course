@@ -6,7 +6,7 @@
   --prism-font-family: var(--slidev-code-font-family);
   --slidev-code-padding: var(--code-padding);
   --slidev-code-font-size: var(--code-font-size);
-  --slidev-code-line-height: 1.5em;
+  --slidev-code-line-height: 1.5;
   --slidev-code-radius: 0;
 
   --inline-code-font-size: 20px;
@@ -61,8 +61,9 @@ html.dark {
 }
 
 pre[class*='language-'] {
-  @apply p-2;
   margin: 8px 0;
+
+  line-height: 0  !important;
 }
 
 :not(pre) > code {
@@ -89,5 +90,5 @@ pre[class*='language-'] {
 
 
 code {
-  line-height: 1.5em;
+  line-height: 1.5;
 }
