@@ -316,3 +316,272 @@ pre[class*='language-'] {
 
 - 演習問題
   - https://atcoder.jp/contests/apg4b/tasks/APG4b_cs
+
+---
+
+# 入力
+
+- プログラムは `cout` で外部に出力を行うが、逆に外部からの**入力**を受け取ることもできる
+
+<center>
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+  int num;
+  
+  cin >> num;
+  
+  cout << num * 10 << endl;
+}
+```
+
+</center>
+
+<style>
+
+pre[class*='language-'] {
+  margin-top: 20px;
+  width: 760px;
+}
+
+.slidev-code code {
+  font-size: 16px;
+}
+
+</style>
+
+---
+
+# 入力
+
+<center>
+
+```cpp
+int main() {
+  int num;
+  
+  cin >> num;
+  
+  cout << num * 10 << endl;
+}
+```
+
+</center>
+
+- `cin >> 変数;` で変数に入力を受け取る
+  - `cout` は out なので出力、`cin` は in なので入力
+
+<style>
+
+pre[class*='language-'] {
+  margin-bottom: 30px;
+  width: 760px;
+}
+
+.slidev-code code {
+  font-size: 20px;
+}
+
+</style>
+
+---
+
+# 入力
+
+<center>
+
+```cpp
+int main() {
+  int num;
+  
+  cin >> num;
+  
+  cout << num * 10 << endl;
+}
+```
+
+</center>
+
+- `cout` は「標準出力」へ出力を行う
+- `cin` は「標準入力」から入力を受け取る
+
+<style>
+
+pre[class*='language-'] {
+  margin-bottom: 30px;
+  width: 760px;
+}
+
+.slidev-code code {
+  font-size: 20px;
+}
+
+</style>
+
+---
+
+# 入力
+
+<div id="main">
+
+<div id="code-sec">
+
+```cpp
+int main() {
+  int num;
+  
+  cin >> num;
+  
+  cout << num * 10 << endl;
+}
+```
+
+</div>
+
+<div id="var-sec">
+
+<div v-click="1">
+
+<div class="var-box">
+<h3><span class="title">num</span></h3>
+<div class="inner">
+
+<div v-click="2">
+42
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="cin-box">
+<h3><span class="title">cin</span></h3>
+<div class="inner">
+
+42
+
+</div>
+</div>
+
+<div id="cin-cover">
+
+<div class="box cin-cover-box" id="box-0"></div>
+<div class="box cin-cover-box" id="box-1"></div>
+
+</div>
+
+<style>
+
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.slidev-code code {
+  font-size: 20px  !important;
+}
+
+pre[class*='language-'] {
+  width: 550px;
+  margin-bottom: 40px;
+}
+
+#cin-box {
+  min-height: calc(2.5em + 4px);
+
+  border: 2px solid forestgreen;
+  position: relative;
+}
+#cin-box h3{
+  text-align: left;
+  position: absolute;
+  right: 0;
+  left: 20px;
+  top: -0.8em;
+}
+#cin-box .title{
+  padding: 0.5em;
+  background: #FFF;
+  color: forestgreen;
+}
+#cin-box .inner{
+  padding: 0.5em;
+}
+
+.var-box {
+  height: 150px;
+  width: 150px;
+
+  border: 2px solid #0094D6;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  margin-left: 120px;
+}
+.var-box h3{
+  text-align: center;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: -1em;
+}
+.var-box .title{
+  font-size: 30px;
+
+  padding: 0.5em;
+  background: #FFF;
+  color: #0094D6;
+}
+.var-box .inner{
+  font-size: 64px;
+
+  margin-top: -16px;
+}
+
+#cin-cover {
+  border-color: black;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  position: absolute;
+  top: 100px;
+  left: 100px;
+
+  height: 300px;
+  width: 300px;
+}
+
+.cin-cover-box {
+  border: none;
+}
+
+#box-0 {
+  top: 100px;
+  left: 100px;
+
+  height: 100px;
+  width: 100px;
+}
+
+#box-1 {
+  top: 150px;
+  left: 150px;
+
+  height: 100px;
+  width: 100px;
+}
+
+</style>
