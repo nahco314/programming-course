@@ -37,3 +37,7 @@ src: ./pages/variable.md
 ---
 src: ./pages/vector.md
 ---
+
+---
+src: ./pages/function.md
+---
