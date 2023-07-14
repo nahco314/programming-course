@@ -7,3 +7,7 @@ APCC 内でのプログラミング講座に使用される資料です。
 - `npm install`
 - `npm run dev`
 - visit http://localhost:3030
+
+ライセンスはつけていません(ので、勝手に使わないでください)
+
+このリポジトリのスライドは、https://nahco314.github.io/programming-course から閲覧できます
