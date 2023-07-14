@@ -422,6 +422,8 @@ pre[class*='language-'] {
 </style>
 
 ---
+clicks: 4
+---
 
 # 入力
 
@@ -473,10 +475,13 @@ int main() {
 
 <div id="cin-cover">
 
-<div class="box cin-cover-box" id="box-0"></div>
-<div class="box cin-cover-box" id="box-1"></div>
+<div v-click="2" class="box cin-cover-box" id="cover-0"></div>
 
 </div>
+
+<div v-click-hide="2"><div v-click="1" class="box code-box" id="box-0"></div></div>
+<div v-click-hide="3"><div v-click="2" class="box code-box" id="box-1"></div></div>
+<div v-click-hide="4"><div v-click="3" class="box code-box" id="box-2"></div></div>
 
 <style>
 
@@ -553,35 +558,322 @@ pre[class*='language-'] {
 }
 
 #cin-cover {
-  border-color: black;
-  background-color: rgba(0, 0, 0, 0.5);
-
-  position: absolute;
-  top: 100px;
-  left: 100px;
-
-  height: 300px;
-  width: 300px;
 }
 
 .cin-cover-box {
   border: none;
+  background-color: #1b1b1b;
+}
+
+#cover-0 {
+  top: 460px;
+  left: 72px;
+
+  height: 45px;
+  width: 32px;
+}
+
+.code-box {
+  height: 30px;
+  border-color: orange;
 }
 
 #box-0 {
-  top: 100px;
-  left: 100px;
+  top: 198px;
+  left: 120px;
 
-  height: 100px;
+
   width: 100px;
 }
 
 #box-1 {
-  top: 150px;
-  left: 150px;
+  top: 259px;
+  left: 120px;
 
-  height: 100px;
-  width: 100px;
+
+  width: 136px;
+}
+
+#box-2 {
+  top: 319px;
+  left: 120px;
+
+
+  width: 306px;
 }
 
 </style>
+
+---
+clicks: 7
+---
+
+# 入力
+
+<div id="main">
+
+<div id="code-sec">
+
+```cpp
+int main() {
+  int a, b;
+  
+  string c, s;
+  
+  cin >> a >> b >> c;
+  
+  cin >> s;
+}
+```
+
+</div>
+
+<div id="var-sec-outer">
+
+<div id="var-sec-0">
+
+<div v-click="1" class="var-box">
+<h3><span class="title">a</span></h3>
+<div class="inner">
+
+<div v-click="3">
+5
+</div>
+
+</div>
+</div>
+
+<div v-click="1" class="var-box">
+<h3><span class="title">b</span></h3>
+<div class="inner">
+
+<div v-click="4">
+12
+</div>
+
+</div>
+</div>
+
+</div>
+
+<div id="var-sec-0">
+
+<div v-click="2" class="var-box">
+<h3><span class="title">c</span></h3>
+<div class="inner">
+
+<div v-click="5">
+"24"
+</div>
+
+</div>
+</div>
+
+<div v-click="2" class="var-box">
+<h3><span class="title">s</span></h3>
+<div class="inner">
+
+<div v-click="6">
+"abc"
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div id="cin-box">
+<h3><span class="title">cin</span></h3>
+<div class="inner">
+
+5 12
+
+24
+
+abc
+
+</div>
+</div>
+
+<div id="cin-cover">
+
+<div v-click="3" class="box cin-cover-box" id="cover-0"></div>
+<div v-click="4" class="box cin-cover-box" id="cover-1"></div>
+<div v-click="5" class="box cin-cover-box" id="cover-2"></div>
+<div v-click="6" class="box cin-cover-box" id="cover-3"></div>
+
+</div>
+
+<div v-click-hide="2"><div v-click="1" class="box code-box" id="box-0"></div></div>
+<div v-click-hide="3"><div v-click="2" class="box code-box" id="box-1"></div></div>
+<div v-click-hide="6"><div v-click="3" class="box code-box" id="box-2"></div></div>
+<div v-click-hide="7"><div v-click="6" class="box code-box" id="box-3"></div></div>
+
+<style>
+
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.slidev-code code {
+  font-size: 16px  !important;
+}
+
+pre[class*='language-'] {
+  width: 550px;
+  margin-bottom: 20px;
+}
+
+#cin-box {
+  border: 2px solid forestgreen;
+  position: relative;
+}
+#cin-box h3{
+  text-align: left;
+  position: absolute;
+  right: 0;
+  left: 20px;
+  top: -0.8em;
+}
+#cin-box .title{
+  padding: 0 0.5em;
+  background: #FFF;
+  color: forestgreen;
+}
+#cin-box .inner{
+  font-size: 20px;
+  padding: 0.8em;
+}
+#cin-box p {
+  margin: 0;
+}
+
+#var-sec-0, #var-sec-1 {
+  margin-left: 30px;
+  margin-bottom: 30px;
+
+  display: flex;
+}
+
+.var-box {
+  height: 75px;
+  width: 75px;
+
+  border: 2px solid #0094D6;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  margin-left: 20px;
+}
+.var-box h3{
+  text-align: center;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: -1em;
+}
+.var-box .title{
+  font-size: 30px;
+
+  padding: 0 0.5em;
+  background: #FFF;
+  color: #0094D6;
+}
+.var-box .inner{
+  font-size: 28px;
+
+  margin-top: -8px;
+}
+
+#cin-cover {
+}
+
+.cin-cover-box {
+  border: none;
+  background-color: #1b1b1b;
+}
+
+#cover-0 {
+  top: 445px;
+  left: 72px;
+
+  height: 24px;
+  width: 15px;
+}
+
+#cover-1 {
+  top: 445px;
+  left: 72px;
+
+  height: 24px;
+  width: 50px;
+}
+
+#cover-2 {
+  top: 468px;
+  left: 72px;
+
+  height: 24px;
+  width: 50px;
+}
+
+#cover-3 {
+  top: 490px;
+  left: 72px;
+
+  height: 24px;
+  width: 50px;
+}
+
+.code-box {
+  height: 24px;
+  border-color: orange;
+}
+
+#box-0 {
+  top: 192px;
+  left: 140px;
+
+  width: 92px;
+}
+
+#box-1 {
+  top: 240px;
+  left: 140px;
+
+  width: 120px;
+}
+
+#box-2 {
+  top: 288px;
+  left: 140px;
+
+  width: 188px;
+}
+
+#box-3 {
+  top: 337px;
+  left: 140px;
+
+  width: 92px;
+}
+
+</style>
+
+---
+
+# 入力
+
+- 演習問題
+  - https://atcoder.jp/contests/apg4b/tasks/APG4b_cr
