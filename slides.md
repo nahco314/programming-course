@@ -40,7 +40,9 @@ src: ./pages/if.md
 src: ./pages/btw-0.md
 ---
 
-# WIP
+---
+src: ./pages/loop.md
+---
 
 ---
 src: ./pages/vector.md
