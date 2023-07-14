@@ -32,6 +32,10 @@ src: ./pages/basic-debug.md
 src: ./pages/variable.md
 ---
 
+---
+src: ./pages/if.md
+---
+
 # WIP
 
 ---

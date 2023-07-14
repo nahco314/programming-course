@@ -68,6 +68,7 @@ pre[class*='language-'] {
 
 :not(pre) > code {
   font-size: var(--inline-code-font-size);
+  font-variant-ligatures: none;
   background: var(--prism-background);
   @apply font-light py-0.5 rounded;
 }
@@ -84,6 +85,7 @@ pre[class*='language-'] {
 
 .slidev-code {
   font-size: 16px  !important;
+  font-variant-ligatures: none;
   padding: 20px  !important;
   border-radius: 0  !important;
 }
