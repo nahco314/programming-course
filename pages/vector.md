@@ -251,7 +251,7 @@ int main() {
 <div v-click="3">
 
 <div id="nums-box">
-<h3><span class="title">nums</span></h3>
+<h3><span class="title">a</span></h3>
 <div class="inner">
 
 <div id="elt-box">
@@ -575,23 +575,23 @@ int main() {
 <div id="s-display">
 
 <div v-click-hide="2">
-<div v-click="1">s: abc</div>
+<div v-click="1">a: abc</div>
 </div>
 
 <div v-click-hide="3">
-<div v-click="2">s: dbc</div>
+<div v-click="2">a: dbc</div>
 </div>
 
 <div v-click-hide="4">
-<div v-click="3">s: dbcx</div>
+<div v-click="3">a: dbcx</div>
 </div>
 
 <div v-click-hide="5">
-<div v-click="4">s: dbcxy</div>
+<div v-click="4">a: dbcxy</div>
 </div>
 
 <div v-click-hide="6">
-<div v-click="5">s: dbcx</div>
+<div v-click="5">a: dbcx</div>
 </div>
 
 </div>
