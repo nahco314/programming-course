@@ -143,7 +143,7 @@ pre[class*='language-'] {
 # ブロックとスコープ
 
 - 演習問題
-  - https://atcoder.jp/contests/apg4b/tasks/APG4b_co​
+  - https://atcoder.jp/contests/apg4b/tasks/APG4b_co
 
 ---
 
