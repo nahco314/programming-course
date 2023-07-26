@@ -51,3 +51,7 @@ src: ./pages/vector.md
 ---
 src: ./pages/function.md
 ---
+
+---
+src: ./pages/application.md
+---
