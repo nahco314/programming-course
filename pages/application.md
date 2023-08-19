@@ -253,4 +253,284 @@ pre[class*='language-'] {
 
 # 再帰関数
 
-## WIP
+- 当然、関数の中で関数を呼ぶことができる
+
++ ある関数の中で、その関数自身を呼ぶこともできる
++ こういった呼び出しを**再帰的**な呼び出しと呼ぶ
+
+- 再帰呼び出しを含む関数を再帰関数と呼ぶ
+
+---
+
+# 再帰関数
+
+- 例を見てみよう
+
+<v-clicks>
+
++ n の階乗 n! = 1 * 2 * 3 * ... * (n - 1) * n
++ 入れ替えると: n! = n * (n - 1) * ... * 3 * 2 * 1
++ こう見れる: n! = n * (n - 1)!
+
+</v-clicks>
+
+---
+
+# 再帰関数
+
+- 例を見てみよう
+- n の階乗を計算する関数を普通に実装すると...
+
+<center>
+
+```cpp
+int factorial(int n) {
+  int res = 1;
+  for (int i = 1; i <= n; i++) {
+    res *= i;
+  }
+  return res;
+}
+```
+
+</center>
+
+<style>
+
+pre[class*='language-'] {
+  width: 800px;
+  margin-top: 25px;
+}
+
+.slidev-code code {
+  font-size: 20px  !important;
+}
+
+</style>
+
+---
+
+# 再帰関数
+
+- 例を見てみよう
+- 再帰で実装すると...
+
+<center>
+
+```cpp
+int factorial(int n) {
+  if (n == 1) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+}
+```
+
+</center>
+
+<style>
+
+pre[class*='language-'] {
+  width: 800px;
+  margin-top: 25px;
+}
+
+.slidev-code code {
+  font-size: 20px  !important;
+}
+
+</style>
+
+---
+clicks: 19
+---
+
+# 再帰関数
+
+- `factorial(4)` を計算することを考える
+
+<div id="main">
+
+<div id="code-sec">
+
+```cpp
+int factorial(int n) {
+  if (n == 1) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+}
+```
+
+</div>
+
+<div id="stack-box">
+<div class="inner">
+
+<div v-click-hide="19">
+<div v-click="1">
+
+`factorial(4)`
+
+</div>
+</div>
+
+<div v-click-hide="17">
+<div v-click="4">
+
+`factorial(3)`
+
+</div>
+</div>
+
+<div v-click-hide="15">
+<div v-click="7">
+
+`factorial(2)`
+
+</div>
+</div>
+
+<div v-click-hide="13">
+<div v-click="10">
+
+`factorial(1)`
+
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<div v-click-hide="2"><div class="box func-box" v-click="1"></div></div>
+<div v-click-hide="3"><div class="box return-box" v-click="2"></div></div>
+<div v-click-hide="4"><div class="box call-box" v-click="3"></div></div>
+
+<div v-click-hide="5"><div class="box func-box" v-click="4"></div></div>
+<div v-click-hide="6"><div class="box return-box" v-click="5"></div></div>
+<div v-click-hide="7"><div class="box call-box" v-click="6"></div></div>
+
+<div v-click-hide="8"><div class="box func-box" v-click="7"></div></div>
+<div v-click-hide="9"><div class="box return-box" v-click="8"></div></div>
+<div v-click-hide="10"><div class="box call-box" v-click="9"></div></div>
+
+<div v-click-hide="11"><div class="box func-box" v-click="10"></div></div>
+<div v-click-hide="12"><div class="box" id="box-0" v-click="11"></div></div>
+<div v-click-hide="13"><div class="box" id="box-1" v-click="12"></div></div>
+
+<div v-click-hide="14"><div class="box call-box" v-click="13"></div></div>
+<div v-click-hide="15"><div class="box return-box" v-click="14"></div></div>
+
+<div v-click-hide="16"><div class="box call-box" v-click="15"></div></div>
+<div v-click-hide="17"><div class="box return-box" v-click="16"></div></div>
+
+<div v-click-hide="18"><div class="box call-box" v-click="17"></div></div>
+<div v-click-hide="19"><div class="box return-box" v-click="18"></div></div>
+
+<style>
+
+pre[class*='language-'] {
+  width: 450px;
+  margin-top: 40px;
+}
+
+.slidev-code code {
+  font-size: 20px  !important;
+}
+
+.box {
+  border-color: orange;
+}
+
+.func-box {
+  top: 238px;
+  left: 70px;
+
+  width: 375px;
+  height: 192px;
+}
+
+.return-box {
+  top: 365px;
+  left: 95px;
+
+  width: 345px;
+  height: 30px;
+}
+
+.call-box {
+  top: 365px;
+  left: 228px;
+
+  width: 210px;
+  height: 30px;
+}
+
+#box-0 {
+  top: 272px;
+  left: 95px;
+
+  width: 170px;
+  height: 95px;
+}
+
+#box-1 {
+  top: 272px;
+  left: 95px;
+
+  width: 170px;
+  height: 95px;
+}
+
+#box-1 {
+  top: 305px;
+  left: 120px;
+
+  width: 112px;
+  height: 30px;
+}
+
+#main {
+  display: flex;
+}
+
+#code-sec, #stack-box {
+  flex: 1;
+}
+
+#stack-box {
+  min-height: calc(2.5em + 4px);
+
+  margin: 40px;
+
+  border: 2px solid #0094D6;
+  position: relative;
+}
+
+#stack-box h3{
+  text-align: left;
+  position: absolute;
+  right: 0;
+  left: 20px;
+  top: -0.8em;
+}
+#stack-box .title{
+  padding: 0.5em;
+  background: #FFF;
+  color: #0094D6;
+}
+#stack-box .inner{
+  padding: 0.5em;
+}
+
+</style>
+
+---
+
+# 再帰関数
+
+- 演習問題
+  - むずめかも
+  - https://atcoder.jp/contests/apg4b/tasks/APG4b_cc
